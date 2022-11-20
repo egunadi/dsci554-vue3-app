@@ -1,7 +1,7 @@
 <template>
   <div class="d3Chart">
 
-    <h1 class="mt-3">D3 Chart</h1>
+    <h1 class="mt-3">D3 Chart Options API</h1>
 
     <div class="title">Top 10 COVID-19 confirmed in US, Aug 31 2020 (source Johns Hopkins University)</div>
     <svg width="400" height="300" id="chart"></svg>
@@ -17,7 +17,6 @@
 
 import { mapWritableState } from 'pinia'
 import { useChartStore } from '../stores/useChartStore'
-import axios from 'axios';
 import * as d3 from 'd3';
 
 export default {
@@ -33,23 +32,23 @@ export default {
   methods: {
     barChart() {
       var svg = d3.select('#chart');
-      var sel = svg.selectAll('rect')
+      var enter = svg.selectAll('rect')
         .data(this.covid)
         .enter();
       
-      sel.append('rect')
+      enter.append('rect')
         .attr('x', 100)
         .attr('y', (d, i) => 20 + i * 25)
         .attr('width', d => d.value / 1000)
         .attr('class', 'bar');
 
-      sel.append('text')
+      enter.append('text')
         .attr('x', 90)
         .attr('y', (d, i) => 30 + i * 25)
         .attr('class', 'label')
         .text(d => d.label);
 
-      sel.append('text')
+      enter.append('text')
         .attr('x', d => 90 + d.value / 1000)
         .attr('y', (d, i) => 30 + i * 25)
         .attr('class', 'value')
@@ -58,9 +57,9 @@ export default {
   },
   mounted: function () {
     if (!this.covid) {
-      axios.get('covid-19-confirmed-083120.json').then(result => {
-        this.covid = result.data;  
-        this.message = `Data was loaded, contains ${this.covid.length} rows`
+      d3.json('covid-19-confirmed-083120.json').then(result => {
+        this.covid = result;  
+        this.message = `Data was loaded from file, contains ${this.covid.length} rows`
         this.barChart();
       });
     } else {

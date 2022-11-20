@@ -1,7 +1,7 @@
 <template>
   <div class="htmlChartComp">
 
-    <h1 class="mt-3">HTML Chart with Composition API</h1>
+    <h1 class="mt-3 green">HTML Chart Composition API</h1>
 
     <div class="title">Top 10 COVID-19 confirmed in US, Aug 31 2020 (source Johns Hopkins University)</div>
 
@@ -34,7 +34,7 @@ onMounted(() => {
   if (!store.planets) {
     axios.get('planets.json').then(result => {
       store.planets = result.data;
-      message.value = `Data was loaded, contains ${store.planets.length} rows`;
+      message.value = `Data was loaded from file, contains ${store.planets.length} rows`;
     });
   }
 })
@@ -43,7 +43,6 @@ onMounted(() => {
 <style scoped>
 .title {
   font-size: 1vw;
-  color:hsla(160, 100%, 37%, 1);
 }
 
 pre {

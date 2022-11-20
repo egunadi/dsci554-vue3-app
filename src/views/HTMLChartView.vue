@@ -1,7 +1,7 @@
 <template>
   <div class="htmlChart">
 
-    <h1 class="mt-3">HTML Chart</h1>
+    <h1 class="mt-3 green">HTML Chart Options API</h1>
 
     <div class="title">Top 10 COVID-19 confirmed in US, Aug 31 2020 (source Johns Hopkins University)</div>
 
@@ -54,7 +54,7 @@ export default {
     if (!this.covid) {
       axios.get('covid-19-confirmed-083120.json').then(result => {
         this.covid = result.data;  
-        this.message = `Data was loaded, contains ${this.covid.length} rows`
+        this.message = `Data was loaded from file, contains ${this.covid.length} rows`
       });
     }
   }

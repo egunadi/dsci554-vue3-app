@@ -16,6 +16,10 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/htmlchartcomp">HTML Chart Comp</RouterLink>
         <RouterLink to="/d3chart">D3 Chart</RouterLink>
         <RouterLink to="/d3chartcomp">D3 Chart Comp</RouterLink>
+        <RouterLink to="/smallmultiples">Small Multiples</RouterLink>
+        <RouterLink to="/map">Mapbox Map</RouterLink>
+        <RouterLink to="/mapcomp">Mapbox Map Comp</RouterLink>
+        <RouterLink to="/deckmapcomp">Mapbox + Deck.gl Map Comp</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>

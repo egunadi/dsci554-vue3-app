@@ -1,7 +1,7 @@
 <template>
   <div class="d3ChartComp">
 
-    <h1 class="mt-3">D3 Chart with Composition API</h1>
+    <h1 class="mt-3">D3 Chart Composition API</h1>
 
     <div class="title">Top 10 COVID-19 confirmed in US, Aug 31 2020 (source Johns Hopkins University)</div>
     <svg width="400" height="300" id="chart"></svg>
@@ -15,7 +15,6 @@
 
 <script setup>
 import * as d3 from 'd3';
-import axios from 'axios';
 import { ref, onMounted } from 'vue';
 import { useChartStore } from '../stores/useChartStore'
 
@@ -24,23 +23,23 @@ const message = ref('Data was set from store');
 
 function barChart() {
   var svg = d3.select('#chart');
-  var sel = svg.selectAll('rect')
+  var enter = svg.selectAll('rect')
     .data(store.planets)
     .enter();
 
-  sel.append('rect')
+  enter.append('rect')
     .attr('x', 100)
     .attr('y', (d, i) => 20 + i * 25)
     .attr('width', d => d.dist / 25)
     .attr('class', 'bar');
 
-  sel.append('text')
+  enter.append('text')
     .attr('x', 90)
     .attr('y', (d, i) => 30 + i * 25)
     .attr('class', 'label')
     .text(d => d.label);
 
-  sel.append('text')
+  enter.append('text')
     .attr('x', d => 150 + d.dist / 25)
     .attr('y', (d, i) => 30 + i * 25)
     .attr('class', 'value')
@@ -49,15 +48,15 @@ function barChart() {
 
 onMounted(() => {
   if (!store.planets) {
-    axios.get('planets.json').then(result => {
-      store.planets = result.data;
-      message.value = `Data was loaded, contains ${store.planets.length} rows`;
+    d3.json('planets.json').then(result => {
+      store.planets = result;
+      message.value = `Data was loaded from file, contains ${store.planets.length} rows`;
       barChart();
     });
   } else {
     barChart();
   }
-})
+});
 </script>
 
 <style scoped>

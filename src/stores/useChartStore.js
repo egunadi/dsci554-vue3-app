@@ -1,9 +1,10 @@
 import { defineStore } from 'pinia'
 
-export const useChartStore = defineStore('counter', {
+export const useChartStore = defineStore('chartdata', {
   state: () => ({ 
-    count: 0, 
     covid: undefined,
-    planets: undefined
+    planets: undefined,
+    planetsMulti: undefined,
+    upc: undefined
   })
 })

@@ -41,13 +41,13 @@ code main.js #add imports for bootstrap</code></pre>
 
     The following table lists what charts are demonstrated in each page.
 
-    <table class="table table-dark">
+    <table class="table table-dark table-striped">
       <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">Page</th>
           <th scope="col">Vue API</th>
-          <th scope="col">Notes</th>
+          <th scope="col">Description</th>
         </tr>
       </thead>
       <tbody>
@@ -55,25 +55,43 @@ code main.js #add imports for bootstrap</code></pre>
           <th scope="row">1</th>
           <td><a @click="$router.push('htmlchart')">HTML Chart</a></td>
           <td><a target="_blank" href="https://vuejs.org/guide/introduction.html#options-api">Options API</a></td>
-          <td>HTML bar chart realized using divs</td>
+          <td>HTML bar chart with divs</td>
         </tr>
         <tr>
           <th scope="row">2</th>
           <td><a @click="$router.push('htmlchartcomp')">HTML Chart Comp</a></td>
           <td><a target="_blank" href="https://vuejs.org/guide/introduction.html#options-api">Composition API</a></td>
-          <td>HTML bar chart realized using divs</td>
+          <td>HTML bar chart with divs</td>
         </tr>
         <tr>
-          <th scope="row">1</th>
+          <th scope="row">3</th>
           <td><a @click="$router.push('d3chart')">D3 Chart</a></td>
           <td><a target="_blank" href="https://vuejs.org/guide/introduction.html#options-api">Options API</a></td>
           <td>D3 bar chart</td>
         </tr>
         <tr>
-          <th scope="row">2</th>
+          <th scope="row">4</th>
           <td><a @click="$router.push('d3chartcomp')">D3 Chart Comp</a></td>
           <td><a target="_blank" href="https://vuejs.org/guide/introduction.html#options-api">Composition API</a></td>
           <td>D3 bar chart</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td><a @click="$router.push('map')">Mapbox Map</a></td>
+          <td><a target="_blank" href="https://vuejs.org/guide/introduction.html#options-api">Options API</a></td>
+          <td>Mapbox map</td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td><a @click="$router.push('mapcomp')">Mapbox Map Comp</a></td>
+          <td><a target="_blank" href="https://vuejs.org/guide/introduction.html#options-api">Composition API</a></td>
+          <td>Mapbox map</td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td><a @click="$router.push('deckmapcomp')">Mapbox + Deck.gl Map Comp</a></td>
+          <td><a target="_blank" href="https://vuejs.org/guide/introduction.html#options-api">Composition API</a></td>
+          <td>Mapbox map with Deck.gl scatterplot layer</td>
         </tr>
       </tbody>
     </table>

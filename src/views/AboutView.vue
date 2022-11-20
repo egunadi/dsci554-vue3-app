@@ -6,9 +6,7 @@
       This example was created using <a target="_blank" href="https://vitejs.dev/">Vite</a> and <a target="_blank"
         href="https://vuejs.org/">Vue 3</a>. I followed the <a href="https://vitejs.dev/guide/" target="_blank">Vite:
         Getting Started</a> to generate a Vue App and
-      then added the charts.</div>
-
-    <div>The steps to create this example are as follows:</div>
+      then added the charts:</div>
 
     <ol>
       <li>Install vite globally with:
@@ -18,18 +16,18 @@
         <pre><code>npm create vite@latest</code></pre>
       </li>
       <li>Select the following:
-        <pre><code>✔ Project name: vite-project
+        <pre><code>✔ Project name: vue3-app
 ✔ Select a framework: › Vue
 ✔ Select a variant: › JavaScript</code></pre>
       </li>
       <li>Open README.md and follow <code>Recommended IDE Setup</code></li>
       <li>In the terminal run the dev server:
-        <pre><code>cd vite-project
+        <pre><code>cd vue3-app
 npm install
 npm run dev</code></pre>
       </li>
       <li>Install bootstrap and configure:
-        <pre><code>cd vite-project
+        <pre><code>cd vue3-app
 npm install bootstrap bootstrap-icons
 code main.js #add imports for bootstrap</code></pre>
       </li>
@@ -39,7 +37,7 @@ code main.js #add imports for bootstrap</code></pre>
         chart.</li>
     </ol>
 
-    The following table lists what charts are demonstrated in each page.
+    Table pages and charts demonstrated.
 
     <table class="table table-dark table-striped">
       <thead>
@@ -77,12 +75,18 @@ code main.js #add imports for bootstrap</code></pre>
         </tr>
         <tr>
           <th scope="row">5</th>
+          <td><a @click="$router.push('smallmultiples')">Small Multiples</a></td>
+          <td><a target="_blank" href="https://vuejs.org/guide/introduction.html#options-api">Composition API</a></td>
+          <td>D3 reusable bar chart as small multiples</td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
           <td><a @click="$router.push('map')">Mapbox Map</a></td>
           <td><a target="_blank" href="https://vuejs.org/guide/introduction.html#options-api">Options API</a></td>
           <td>Mapbox map</td>
         </tr>
         <tr>
-          <th scope="row">6</th>
+          <th scope="row">7</th>
           <td><a @click="$router.push('mapcomp')">Mapbox Map Comp</a></td>
           <td><a target="_blank" href="https://vuejs.org/guide/introduction.html#options-api">Composition API</a></td>
           <td>Mapbox map</td>

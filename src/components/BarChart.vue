@@ -54,18 +54,18 @@ onMounted(() => {
 }
 
 pre {
-  border: aquamarine 2px solid;
+  border: hsla(160, 100%, 37%, 1) 2px solid;
 }
 
-:deep(svg.chart) {
+/* :deep(svg.chart) {
   background-color: aliceblue;
-}
+} */
 
 :deep(text.label) {
   text-anchor: end;
   alignment-baseline: middle;
   font-size: 12px;
-  fill: black;
+  fill: #eee;
 }
 
 :deep(text.value) {
@@ -80,7 +80,7 @@ pre {
 :deep(rect.bar) {
   text-align: right;  /* pull value text to the end of the bar */
   vertical-align: middle;  /* align value text with middle of the bar */
-  fill:#7abcff;
+  fill: hsla(160, 100%, 37%, 1);
   height: 20px;  /* bar height, this can stay fixed */
 }
 </style>

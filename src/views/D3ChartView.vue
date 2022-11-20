@@ -76,7 +76,7 @@ export default {
 }
 
 pre {
-  border: aquamarine 2px solid;
+  border: hsla(160, 100%, 37%, 1) 2px solid;
 }
 
 :deep(text.label) {  /* deep lets the framework know about dynamic CSS set by d3 */

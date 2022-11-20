@@ -64,7 +64,7 @@ onMounted(() => {
 
 <style scoped>
 pre {
-  border: aquamarine 2px solid;
+  border: hsla(160, 100%, 37%, 1) 2px solid;
   background-color: black;
 }
 </style>

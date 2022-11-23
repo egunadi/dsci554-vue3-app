@@ -73,7 +73,7 @@ pre {
   text-anchor: end;
   alignment-baseline: middle;
   font-size: 12px;
-  fill: black;
+  fill: #eee;
 }
 
 :deep(text.value) {

@@ -7,6 +7,8 @@
 
       <h3>Bar chart</h3>
 
+      XXX: {{store.planetsMulti[0][0].label}}
+
       <BarChart
         class="mb-2"
         :data="store.planetsMulti[0]" 
@@ -45,9 +47,23 @@ import * as d3 from 'd3';
 const store = useChartStore();
 const message = ref('Data was set from store');
 
+// onMounted(async () => {
+//   if (!store.planetsMulti) {
+//     store.planetsMulti = [];
+//     store.planetsMulti.push(await d3.json('covid-19-confirmed-083120.json'));
+//     store.planetsMulti.push(await d3.json('covid-19-confirmed-083120.json'));
+//     store.planetsMulti.push(await d3.json('covid-19-confirmed-083120.json'));
+//     store.planetsMulti.push(await d3.json('covid-19-confirmed-083120.json'));
+//     store.planetsMulti.push(await d3.json('covid-19-confirmed-083120.json'));
+//     console.log(store.planetsMulti)
+
+//     message.value = `Data was loaded from file, contains ${store.planetsMulti.length} records`;
+//   }
+// });
+
 onMounted(() => {
   if (!store.planetsMulti) {
-    var promises = [];
+    const promises = [];
     promises.push(d3.json('covid-19-confirmed-083120.json'));
     promises.push(d3.json('covid-19-confirmed-083120.json'));
     promises.push(d3.json('covid-19-confirmed-083120.json'));
